@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemistry Study Tracker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+}
+
+h1 { text-align: center; }
+h2 { color: #38bdf8; margin-top: 25px; }
+h3 { margin-top: 15px; color: #94a3b8; }
+ul { list-style: none; padding-left: 0; }
+li { margin: 5px 0; }
+input[type="checkbox"] { margin-right: 8px; }
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #38bdf8;
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+input[type="text"] {
+  padding: 6px;
+  margin: 5px 0;
+  width: 200px;
+}
+
+.main-title {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #38bdf8, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 5px;
+}
+
+.link-btn {
+  display: block;
+  width: fit-content;
+  margin: 10px auto 20px auto;
+  padding: 8px 18px;
+  background: #22d3ee;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.link-btn:hover {
+  background: #38bdf8;
+  transform: scale(1.05);
+}
+
+.subtitle {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* Login screen */
+#login-screen {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Hide tracker initially */
+#tracker {
+  display: none;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #22d3ee;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.toast.show {
+  opacity: 1;
+}
+</style>
+</head>
+
+<body>
+
+<h1 class="main-title">+2 Chemistry Study Tracker</h1>
+<p class="subtitle">Click below for +2 chemistry chapter-wise one-shot classes link</p>
+
+<a href="https://plus2oneshotss.wordpress.com/chemistry/" target="_blank" class="link-btn">
+   One Shot
+</a>
+
+<!-- LOGIN SCREEN -->
+<div id="login-screen">
+  <h3>Enter Your Name to Start</h3>
+  <input type="text" id="nameInput" placeholder="Your Name">
+  <br>
+  <button onclick="startTracker()">Enter</button>
+</div>
+
+<!-- TRACKER -->
+<div id="tracker">
+
+<!-- PART 1 -->
+<h2>PART 1: PHYSICAL CHEMISTRY</h2>
+
+<h3>Solutions</h3>
+<ul>
+<li><label><input type="checkbox"> Henry's Law</label></li>
+<li><label><input type="checkbox"> Raoult's Law</label></li>
+<li><label><input type="checkbox"> Colligative Properties</label></li>
+<li><label><input type="checkbox"> Van't Hoff Factor</label></li>
+</ul>
+
+<h3>Electrochemistry</h3>
+<ul>
+<li><label><input type="checkbox"> Nernst Equation</label></li>
+<li><label><input type="checkbox"> Kohlrausch's Law</label></li>
+<li><label><input type="checkbox"> Faraday's Laws</label></li>
+<li><label><input type="checkbox"> Batteries</label></li>
+</ul>
+
+<h3>Chemical Kinetics</h3>
+<ul>
+<li><label><input type="checkbox"> Order & Molecularity</label></li>
+<li><label><input type="checkbox"> Zero & First Order Equations</label></li>
+<li><label><input type="checkbox"> Arrhenius Equation</label></li>
+</ul>
+</ul>  <h3>Electrochemistry</h3>  
+<ul>  
+<li><label><input type="checkbox" id="chem2t1"> Nernst Equation</label></li>  
+<li><label><input type="checkbox" id="chem2t2"> Kohlrausch's Law</label></li>  
+<li><label><input type="checkbox" id="chem2t3"> Faraday's Laws</label></li>  
+<li><label><input type="checkbox" id="chem2t4"> Batteries</label></li>  
+</ul>  <h3>Chemical Kinetics</h3>  
+<ul>  
+<li><label><input type="checkbox" id="chem3t1"> Order & Molecularity</label></li>  
+<li><label><input type="checkbox" id="chem3t2"> Zero & First Order Equations</label></li>  
+<li><label><input type="checkbox" id="chem3t3"> Arrhenius Equation</label></li>  
+</ul>  <!-- PART 2 -->  <h2>PART 2: INORGANIC CHEMISTRY</h2>  <h3>d- and f-Block</h3>  
+<ul>  
+<li><label><input type="checkbox" id="chem4t1"> General Trends</label></li>  
+<li><label><input type="checkbox" id="chem4t2"> Lanthanoid Contraction</label></li>  
+<li><label><input type="checkbox" id="chem4t3"> KMnO4 & K2Cr2O7</label></li>  
+</ul>  <h3>Coordination Compounds</h3>  
+<ul>  
+<li><label><input type="checkbox" id="chem5t1"> Werner's Theory</label></li>  
+<li><label><input type="checkbox" id="chem5t2"> Isomerism</label></li>  
+<li><label><input type="checkbox" id="chem5t3"> VBT</label></li>  
+<li><label><input type="checkbox" id="chem5t4"> CFT</label></li>  
+</ul>  <!-- PART 3 -->  <h2>PART 3: ORGANIC CHEMISTRY</h2>  <h3>Haloalkanes / Arenes</h3>  
+<ul>  
+<li><label><input type="checkbox" id="chem6t1"> SN1 vs SN2 Mechanisms</label></li>  
+<li><label><input type="checkbox" id="chem6t2"> Ambident Nucleophiles</label></li>  
+</ul>  <h3>Alcohols / Phenols / Ethers</h3>  
+<ul>  
+<li><label><input type="checkbox" id="chem7t1"> Phenol Acidity</label></li>  
+<li><label><input type="checkbox" id="chem7t2"> Lucas Test</label></li>  
+<li><label><input type="checkbox" id="chem7t3"> Reimer-Tiemann Reaction</label></li>  
+<li><label><input type="checkbox" id="chem7t4"> Kolbe's Reaction</label></li>  
+<li><label><input type="checkbox" id="chem7t5"> Williamson Synthesis</label></li>  
+</ul>  <h3>Aldehydes / Ketones / Acids</h3>  
+<ul>  
+<li><label><input type="checkbox" id="chem8t1"> Tollen's / Fehling's / Iodoform Tests</label></li>  
+<li><label><input type="checkbox" id="chem8t2"> Aldol Reaction</label></li>  
+<li><label><input type="checkbox" id="chem8t3"> Cannizzaro Reaction</label></li>  
+<li><label><input type="checkbox" id="chem8t4"> HVZ Reaction</label></li>  
+</ul>  <h3>Amines</h3>  
+<ul>  
+<li><label><input type="checkbox" id="chem9t1"> Basicity Trends</label></li>  
+<li><label><input type="checkbox" id="chem9t2"> Hinsberg's Test</label></li>  
+<li><label><input type="checkbox" id="chem9t3"> Hoffmann Bromamide</label></li>  
+<li><label><input type="checkbox" id="chem9t4"> Gabriel Phthalimide</label></li>  
+</ul>  <h3>Biomolecules</h3>  
+<ul>  
+<li><label><input type="checkbox" id="chem10t1"> Glucose Structure</label></li>  
+<li><label><input type="checkbox" id="chem10t2"> Proteins (Zwitterion & Denaturation)</label></li>  
+<li><label><input type="checkbox" id="chem10t3"> DNA & RNA</label></li> 
+
+<button onclick="saveProgress()">Save Progress</button>
+
+</div>
+
+<div id="toast" class="toast">Progress Saved Successfully!</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+import { getFirestore, setDoc, doc, serverTimestamp, getDoc } 
+from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "studytracker-9e7ae.firebaseapp.com",
+  projectId: "studytracker-9e7ae",
+  storageBucket: "studytracker-9e7ae.firebasestorage.app",
+  messagingSenderId: "686559758224",
+  appId: "1:686559758224:web:d85642bb7a4dba37e29515"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+let currentUser = "";
+
+// STEP 2 + Load Previous Data
+window.startTracker = async function () {
+
+  const name = document.getElementById("nameInput").value.trim();
+
+  if (!name) {
+    alert("Please enter your name.");
+    return;
+  }
+
+  currentUser = name;
+
+  const docRef = doc(db, "chemistry_students", name);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    const data = docSnap.data();
+    const savedTopics = data.checkedTopics || [];
+
+    const checkboxes = document.querySelectorAll("#tracker input[type='checkbox']");
+    checkboxes.forEach(box => {
+      const topic = box.parentElement.textContent.trim();
+      if (savedTopics.includes(topic)) {
+        box.checked = true;
+      }
+    });
+  }
+
+  document.getElementById("login-screen").style.display = "none";
+  document.getElementById("tracker").style.display = "block";
+};
+
+// STEP 3 + Save
+window.saveProgress = async function () {
+
+  if (!currentUser) return;
+
+  const checkboxes = document.querySelectorAll("#tracker input[type='checkbox']");
+  let checkedTopics = [];
+  let totalTicks = 0;
+
+  checkboxes.forEach(box => {
+    if (box.checked) {
+      checkedTopics.push(box.parentElement.textContent.trim());
+      totalTicks++;
+    }
+  });
+
+  await setDoc(doc(db, "chemistry_students", currentUser), {
+    name: currentUser,
+    checkedTopics: checkedTopics,
+    totalTicks: totalTicks,
+    updatedAt: serverTimestamp()
+  });
+
+  const toast = document.getElementById("toast");
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2000);
+};
+
+</script>
+
+</body>
+  </html>
