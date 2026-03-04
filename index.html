@@ -106,6 +106,33 @@ input[type="text"] {
 .toast.show {
   opacity: 1;
 }
+.watermark {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+.my-watermark {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #94a3b8;
+  opacity: 0.6;
+  letter-spacing: 1px;
+}
+
+.watermark:hover {
+  color: #38bdf8;
+  opacity: 1;
+}
 </style>
 </head>
 
@@ -116,6 +143,12 @@ input[type="text"] {
 
 <a href="https://plus2oneshotss.wordpress.com/chemistry/" target="_blank" class="link-btn">
    One Shot
+</a>
+<a href="https://mibsam.online"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="watermark">
+   © mibsam.online
 </a>
 
 <!-- LOGIN SCREEN -->
@@ -295,6 +328,6 @@ window.saveProgress = async function () {
 };
 
 </script>
-
+<div class="my-watermark">© Bald-e 2026</div>
 </body>
-  </html>
+      </html>
